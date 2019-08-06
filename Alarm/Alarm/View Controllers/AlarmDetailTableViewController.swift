@@ -57,10 +57,20 @@ class AlarmDetailTableViewController: UITableViewController {
     //MARK: Actions
 
     @IBAction func enableButtonTapped(_ sender: Any) {
-        // todo
+        guard let alarm = alarm else { return }
+        alarm.enabled.toggle()
+        updateViews()
     }
     
     @IBAction func saveButtonTapped(_ sender: Any) {
-        // todo
+        guard let unwrappedAlarmName = alarmNameTextField.text else { return }
+        
+        if let alarm = alarm {
+            AlarmController.sharedInstance.updateAlarm(fireDate: alarmDatePicker.date, name: unwrappedAlarmName, enabled: alarm.enabled, alarm: alarm)
+        } else {
+            AlarmController.sharedInstance.createAlarm(fireDate: alarmDatePicker.date, name: unwrappedAlarmName, enabled: true)
+        }
+        navigationController?.popViewController(animated: true)
+        
     }
 }

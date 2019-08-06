@@ -76,6 +76,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="alarmSwitch" destination="VcH-N0-A5o" id="3et-C9-l9s"/>
+                                    <outlet property="dateLabel" destination="HOX-Nd-yT7" id="gKX-eQ-vC4"/>
                                     <outlet property="nameLabel" destination="aw2-VG-giK" id="ADW-Sr-Rhq"/>
                                     <outlet property="timeLabel" destination="Snr-M2-YHp" id="oCQ-jb-8je"/>
                                     <segue destination="lpm-Gt-onu" kind="show" identifier="toDetailView" id="TqF-CA-AVS"/>
